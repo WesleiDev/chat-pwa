@@ -1,0 +1,20 @@
+
+#header{
+    height: 50px;
+    background-color: $primary;
+    color: $text-white;
+    padding: 2px 2px;
+
+    .nav{
+        display: flex;
+
+        header{
+            flex: 1;
+        }
+
+        .menu-icon{
+            padding: 1px 10px;
+            cursor: pointer;
+        }
+    }
+}

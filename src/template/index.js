@@ -1,8 +1,16 @@
 require('./style.scss')
+require('font-awesome/css/font-awesome.css')
+
+const header = require('./header.html')
 
 export default{
     el: "#app",
-    template:require('./partial.html'),
+    template:` 
+    <div>
+        ${header}
+    </div>
+    `
+    ,
     afteBind: () =>{
         console.log('Carregou componente')
     }
