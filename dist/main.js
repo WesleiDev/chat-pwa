@@ -97,6 +97,17 @@ eval("var escape = __webpack_require__(/*! ../../css-loader/lib/url/escape.js */
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/talk/style.scss":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/talk/style.scss ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"#talk {\\n  overflow: auto;\\n  height: 100%; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/talk/style.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/template/style.scss":
 /*!****************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./src/template/style.scss ***!
@@ -104,7 +115,7 @@ eval("var escape = __webpack_require__(/*! ../../css-loader/lib/url/escape.js */
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"* {\\n  border: none;\\n  margin: 0;\\n  padding: 0;\\n  font: inherit;\\n  color: inherit;\\n  background: transparent;\\n  box-sizing: border-box;\\n  text-decoration: none; }\\n\\nbody {\\n  font-family: 'Open Sans', sans-serif;\\n  font-size: 36px;\\n  background-color: #E0F2F1; }\\n\\n#header {\\n  height: 50px;\\n  background-color: #004D40;\\n  color: #dfe6e9;\\n  padding: 2px 2px; }\\n  #header .nav {\\n    display: flex; }\\n    #header .nav header {\\n      flex: 1; }\\n    #header .nav .menu-icon {\\n      padding: 1px 10px;\\n      cursor: pointer; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/template/style.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"* {\\n  border: none;\\n  margin: 0;\\n  padding: 0;\\n  font: inherit;\\n  color: inherit;\\n  background: transparent;\\n  box-sizing: border-box;\\n  text-decoration: none; }\\n\\nbody {\\n  font-family: 'Open Sans', sans-serif;\\n  font-size: 36px;\\n  background-color: #E0F2F1; }\\n\\nhtml, body, #app, #wrapper {\\n  width: 100%;\\n  height: 100%; }\\n\\n#header {\\n  height: 70px;\\n  background-color: #004D40;\\n  color: #dfe6e9;\\n  padding: 2px 2px;\\n  width: 100%;\\n  z-index: 1; }\\n  #header .nav {\\n    display: flex; }\\n    #header .nav header {\\n      flex: 1; }\\n    #header .nav .menu-icon {\\n      padding: 5px 10px;\\n      cursor: pointer; }\\n  #header .logo-account {\\n    height: 65px;\\n    width: 65px;\\n    position: absolute;\\n    padding: 5px; }\\n    #header .logo-account img {\\n      height: 100%;\\n      position: relative;\\n      border-radius: 50px; }\\n\\n#sidebar {\\n  background-color: #F6F7F8;\\n  height: 100%;\\n  width: 300px;\\n  position: fixed;\\n  top: 0;\\n  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);\\n  transition: all .5s ease-in-out;\\n  z-index: 2; }\\n\\n@media (min-width: 320px) {\\n  #sidebar {\\n    width: 250px; } }\\n\\n@media (min-width: 425px) {\\n  #sidebar {\\n    width: 300px; } }\\n\\n@media (min-width: 765px) {\\n  #sidebar {\\n    width: 350px; } }\\n\\n.hide-sidebar {\\n  margin-left: -500px !important; }\\n\\n.show-sidebar {\\n  margin-left: 0 !important; }\\n\\n#footer {\\n  height: 50px;\\n  width: 100%;\\n  background-color: #9CDE9F;\\n  margin-bottom: 0px;\\n  display: flex; }\\n\\n#wrapper {\\n  display: flex;\\n  flex-direction: column; }\\n  #wrapper #main {\\n    flex: 1;\\n    overflow: auto; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/template/style.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
@@ -229,6 +240,17 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
+/***/ "./src/images/perfil.jpg":
+/*!*******************************!*\
+  !*** ./src/images/perfil.jpg ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"c8180b4abb6cce121a1b702be9a4d762.jpg\";\n\n//# sourceURL=webpack:///./src/images/perfil.jpg?");
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
@@ -237,7 +259,52 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./template */ \"./src/template/index.js\");\n\r\n\r\nconst components = [\r\n    _template__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\r\n]\r\n\r\nclass Init{\r\n    constructor(){\r\n        components.forEach((component) => {\r\n            let element = document.querySelector(component.el);\r\n            element.innerHTML =component.template;\r\n            component.afteBind();\r\n        })      \r\n    \r\n    }\r\n}\r\n\r\nnew Init();\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _template__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./template */ \"./src/template/index.js\");\n/* harmony import */ var _talk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./talk */ \"./src/talk/index.js\");\n\r\n\r\n\r\nconst components = [\r\n    _template__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\r\n    _talk__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\r\n]\r\n\r\nclass Init{\r\n    constructor(){\r\n        components.forEach((component) => {\r\n            let element = document.querySelector(component.el);\r\n            element.innerHTML =component.template;\r\n            component.afteBind();\r\n        })      \r\n    \r\n    }\r\n}\r\n\r\nnew Init();\n\n//# sourceURL=webpack:///./src/main.js?");
+
+/***/ }),
+
+/***/ "./src/talk/index.js":
+/*!***************************!*\
+  !*** ./src/talk/index.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__(/*! ./style.scss */ \"./src/talk/style.scss\");\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    el: '#main',\r\n    template: __webpack_require__(/*! ./template.html */ \"./src/talk/template.html\"),\r\n    afteBind :()=>{\r\n        console.log('Carregou a conversa')\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/talk/index.js?");
+
+/***/ }),
+
+/***/ "./src/talk/style.scss":
+/*!*****************************!*\
+  !*** ./src/talk/style.scss ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./style.scss */ \"./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./src/talk/style.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/talk/style.scss?");
+
+/***/ }),
+
+/***/ "./src/talk/template.html":
+/*!********************************!*\
+  !*** ./src/talk/template.html ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div id=\\\"talk\\\">\\r\\n    <h1>Primeira mensagem</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Conteudo da conversa aqui</h1>\\r\\n    <h1>Última mensagem</h1>\\r\\n</div>\";\n\n//# sourceURL=webpack:///./src/talk/template.html?");
+
+/***/ }),
+
+/***/ "./src/template/footer.html":
+/*!**********************************!*\
+  !*** ./src/template/footer.html ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div id=\\\"footer\\\">\\r\\n    <h1>FOOTER</h1>\\r\\n</div>\";\n\n//# sourceURL=webpack:///./src/template/footer.html?");
 
 /***/ }),
 
@@ -246,9 +313,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _tem
   !*** ./src/template/header.html ***!
   \**********************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = \"<header id=\\\"header\\\">\\r\\n    <nav class='nav'>\\r\\n        <header>\\r\\n            <a href=\\\"\\\"></a>\\r\\n        </header>\\r\\n        <span class='menu-icon'>\\r\\n            <i class=\\\"fa fa-bars\\\"></i>\\r\\n        </span>\\r\\n    </nav>\\r\\n</header>\";\n\n//# sourceURL=webpack:///./src/template/header.html?");
+eval("module.exports = \"<header id=\\\"header\\\">\\r\\n    <nav class='nav'>\\r\\n        <header>\\r\\n            <a href=\\\"\\\" class=\\\"logo-account\\\">\\r\\n                <img src=\\\"\" + __webpack_require__(/*! ../images/perfil.jpg */ \"./src/images/perfil.jpg\") + \"\\\" alt=\\\"\\\">\\r\\n            </a>\\r\\n        </header>\\r\\n        <span class='menu-icon'>\\r\\n            <i class=\\\"fa fa-bars\\\"></i>\\r\\n        </span>\\r\\n    </nav>\\r\\n</header>\";\n\n//# sourceURL=webpack:///./src/template/header.html?");
 
 /***/ }),
 
@@ -260,7 +327,18 @@ eval("module.exports = \"<header id=\\\"header\\\">\\r\\n    <nav class='nav'>\\
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__(/*! ./style.scss */ \"./src/template/style.scss\")\r\n__webpack_require__(/*! font-awesome/css/font-awesome.css */ \"./node_modules/font-awesome/css/font-awesome.css\")\r\n\r\nconst header = __webpack_require__(/*! ./header.html */ \"./src/template/header.html\")\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    el: \"#app\",\r\n    template:` \r\n    <div>\r\n        ${header}\r\n    </div>\r\n    `\r\n    ,\r\n    afteBind: () =>{\r\n        console.log('Carregou componente')\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/template/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n__webpack_require__(/*! ./style.scss */ \"./src/template/style.scss\")\r\n__webpack_require__(/*! font-awesome/css/font-awesome.css */ \"./node_modules/font-awesome/css/font-awesome.css\")\r\n\r\nconst header = __webpack_require__(/*! ./header.html */ \"./src/template/header.html\")\r\nconst sidbar = __webpack_require__(/*! ./sidebar.html */ \"./src/template/sidebar.html\");\r\nconst footer = __webpack_require__(/*! ./footer.html */ \"./src/template/footer.html\");\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\r\n    el: \"#app\",\r\n    template:` \r\n    <div id=\"wrapper\">\r\n        ${header}\r\n        <div id=\"main\"></div>\r\n        ${footer}\r\n    </div>\r\n    ${sidbar}\r\n    `\r\n    ,\r\n    afteBind: () =>{\r\n        console.log('Carregou componente')\r\n        let btnMenu = document.querySelector('.menu-icon');\r\n        let sideBar = document.getElementById('sidebar');\r\n        btnMenu.addEventListener('click', function(e){\r\n            e.preventDefault();\r\n            if(sideBar.className == 'hide-sidebar' || sideBar.className ==''){\r\n                sideBar.className = 'show-sidebar'\r\n            }else{\r\n                sideBar.className = 'hide-sidebar';\r\n            }\r\n            \r\n        })\r\n    }\r\n});\n\n//# sourceURL=webpack:///./src/template/index.js?");
+
+/***/ }),
+
+/***/ "./src/template/sidebar.html":
+/*!***********************************!*\
+  !*** ./src/template/sidebar.html ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div id=\\\"sidebar\\\" class=\\\"hide-sidebar\\\">\\r\\n    <header>\\r\\n    \\r\\n    </header>\\r\\n\\r\\n</div>\";\n\n//# sourceURL=webpack:///./src/template/sidebar.html?");
 
 /***/ }),
 

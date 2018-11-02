@@ -1,8 +1,41 @@
 #footer{
-    height: 50px;
+    height: 67px;
     width: 100%;
     background-color: #9CDE9F;
     margin-bottom: 0px;
-    display: flex;
+}
 
+.content-footer{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    height: 100%;
+        
+    div{
+        margin-right: 8px;
+    }
+    div:first-child{
+        margin-left: 5px;
+        width: 100%;
+        height: 45px;        
+    }
+
+    div textarea{
+        background:  #fff;
+        font-size: 22px;
+        width: 100%;
+        border-radius: 10px;
+        height: 100%;
+        padding: 5px 10px;
+    }
+    div textarea:focus{
+        border: $primary 1px solid;
+    }
+
+    div button{
+       
+        cursor: pointer;
+
+    }
 }
