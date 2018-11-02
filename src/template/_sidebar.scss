@@ -7,8 +7,34 @@
     box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
     transition: all .5s ease-in-out;
     z-index: 2;
+
+    header{
+        display: flex;
+        flex-direction: row;
+        
+        div:hover{
+            background-color:#e0f2f1; 
+        }
+        div{
+            flex: 1;           
+            cursor: pointer;
+            border-radius: 3px;
+
+
+            i{
+                align-content: center;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+    }
     
 }
+
+.tab-active{
+    background-color: #e0f2f1;
+}
+
 
 @media(min-width: 320px){
     #sidebar{
@@ -36,4 +62,40 @@
 .show-sidebar{
     margin-left: 0!important;
 }
+
+.content-sidebar{
+    height: 100%;
+    width: 100%;    
+    overflow: auto;
+}
+
+.card-user{
+    cursor: pointer;
+    margin:10px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    // background-color: red;
+    padding: 15px;
+    border-top: solid 0.5px rgba(184, 182, 182, 0.75);
+    margin: 0;
+
+    img{
+        border-radius: 50%;
+        height: 50px;
+    }
+
+    p{
+        font-size: 0.5em;
+        margin-top:10px;
+        margin-left: 5px;
+
+
+    }
+}
+
+.card-user:hover{
+    background-color:#efe4e4; 
+}
+
 
