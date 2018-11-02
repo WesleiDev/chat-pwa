@@ -1,7 +1,9 @@
 import TemplateComponent from './template';
+import TalkComponent from './talk';
 
 const components = [
-    TemplateComponent
+    TemplateComponent,
+    TalkComponent
 ]
 
 class Init{
