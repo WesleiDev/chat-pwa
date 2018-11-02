@@ -3,6 +3,7 @@ require('font-awesome/css/font-awesome.css')
 
 const header = require('./header.html')
 const sidbar = require('./sidebar.html');
+const footer = require('./footer.html');
 
 export default{
     el: "#app",
@@ -10,7 +11,7 @@ export default{
     <div id="wrapper">
         ${header}
         <div id="main"></div>
-
+        ${footer}
     </div>
     ${sidbar}
     `
