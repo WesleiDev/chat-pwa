@@ -36,43 +36,22 @@ class Init{
         //     user_id:2
         // });
 
-        let ref = app.database().ref('/list_posts/1');
+        let ref = app.database().ref('/posts').child('messages');
+        let refChild = ref.child('1');
     
         // ref.set({
         //     user_id:3
         // });
 
-        // ref.on('value', function(snapshot){
-        //     console.log(snapshot.val());
-        // })
+        ref.on('value', function(snapshot){
+            console.log(snapshot.val());
+        })
 
-        var myConnectionsRef = app.database().ref('users/joe/connections');
+        refChild.on('child_added', (snap) =>{
+          console.log('Filho adicionado: ', snap.val())       
+        })
 
-        var lastOnlineRef = app.database().ref('users/joe/lastOnline');
-
-        var connectedRef = app.database().ref('.info/connected');
-        connectedRef.on('value', function(snap) {
         
-        if (snap.val() === true) {
-            console.log('Disconected')
-            console.log(snap)
-            // We're connected (or reconnected)! Do anything here that should happen only if online (or on reconnect)
-            var con = myConnectionsRef.push();
-
-            // When I disconnect, remove this device
-            con.onDisconnect().remove();
-
-            // Add this device to my connections list
-            // this value could contain info about the device or a timestamp too
-            con.set(true);
-
-            lastOnlineRef.onDisconnect().set({
-                desc: 1
-            });
-
-    
-        }
-        });
     
     }
 }
