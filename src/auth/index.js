@@ -1,3 +1,4 @@
+import  { app }  from '../firebase'
 
 let template = document.createElement('template');
 template.innerHTML = require('./template.html');
@@ -13,6 +14,7 @@ let contentLogin            = document.querySelector('.login');
 let contentCreateAccount    = document.querySelector('.creat-account');    
 let inputFile               = document.getElementById('file-avatar');
 let displayAvatar           = document.querySelector('.avatar');
+const modal                 = document.querySelector('.modal');
 
 //redireciona o usuário para se
 const redirectCreate = function(e){
@@ -42,6 +44,14 @@ const changeAvatar = function(e){
 btnRedirectCreate.addEventListener('click', redirectCreate)
 btnBackLogin.addEventListener('click', backLogin)
 inputFile.addEventListener('change', changeAvatar)
+
+app.auth().onAuthStateChanged(function(user){
+    if(user){
+        modal.className = 'modal';
+    }else{
+        modal.className += ' open';
+    }
+})
 
 export default {
     el:null,
