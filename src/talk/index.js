@@ -3,7 +3,7 @@ require('./style.scss');
 export default {
     el: '#main',
     template: require('./template.html'),
-    afteBind :()=>{
+    afterBind :()=>{
         console.log('Carregou a conversa')
         const talk       = document.getElementById('talk');
         const sideBar    = document.getElementById('sidebar');

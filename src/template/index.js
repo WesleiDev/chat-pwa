@@ -17,7 +17,7 @@ export default{
     ${sidbar}
     `
     ,
-    afteBind: () =>{
+    afterBind: () =>{
         console.log('Carregou template');
         const btnMenu = document.querySelector('.menu-icon');
         

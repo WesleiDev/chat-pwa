@@ -7,3 +7,13 @@
         overflow: auto;
     }
 }
+
+.hidden{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+.avatar{
+    border-radius: 50px;
+}
