@@ -2,12 +2,12 @@ import  { app }  from '../firebase'
 
 let template = document.createElement('template');
 template.innerHTML = require('./template.html');
-console.log(template)
 template = template.content.childNodes;
 
 document.querySelector('body').appendChild(template[0]);
 
 let btnLogin                = document.getElementById('btn-login');
+let btnCreateAccount        = document.getElementById('btn-create-account');
 let btnRedirectCreate       = document.getElementById('btn-redirect-create');
 let btnBackLogin            = document.getElementById('btn-back-login');
 let contentLogin            = document.querySelector('.login');
@@ -41,15 +41,66 @@ const changeAvatar = function(e){
     reader.readAsDataURL(e.target.files[0])
 
 }
+
+const createAccount = function(e){
+    e.preventDefault();
+    let email    = document.getElementById('create-email');
+    let password = document.getElementById('create-password');
+    let avatar   = document.getElementById('file-avatar');
+
+    //criando usuário no firebase
+    app.auth().createUserWithEmailAndPassword(email.value, password.value)
+    .then(function(data){     
+
+        const refStorage = app.storage().ref('/users/'+data.user.uid); 
+        //Salva a imagem do usuário
+        refStorage.put(avatar.files[0])
+        .then((snapshot) =>{
+            snapshot.ref.getDownloadURL()
+                .then(function(downloadURL){
+                    //Salva usuário
+                    const refDatabase = app.database().ref('/users/'+data.user.uid);
+                    refDatabase.set({
+                        email: data.user.email,
+                        uid: data.user.uid,
+                        avatar : downloadURL
+                    })
+                })
+        }) 
+        
+    })
+    .catch(function(err){
+        alert('ERRO'+err.message)
+        console.log('ERRO AO CADASTRAR USUARIO: ', err)
+    })
+}
+
+const login = function(e){
+    e.preventDefault();
+    let email    = document.getElementById('edit-email');
+    let password = document.getElementById('edit-password');
+
+    app.auth().signInWithEmailAndPassword(email.value, password.value)
+    .then(function(data){
+        console.log(data)
+    }).catch(function(err){
+        alert('Erro: '+err.message)
+    })
+
+}
+
 btnRedirectCreate.addEventListener('click', redirectCreate)
 btnBackLogin.addEventListener('click', backLogin)
 inputFile.addEventListener('change', changeAvatar)
 
+//Verifica se o usuário esta logado
 app.auth().onAuthStateChanged(function(user){
     if(user){
         modal.className = 'modal';
     }else{
         modal.className += ' open';
+        btnCreateAccount.addEventListener('click', createAccount);
+        btnLogin.addEventListener('click', login);
     }
 })
 
