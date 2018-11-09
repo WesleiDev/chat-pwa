@@ -1,4 +1,5 @@
 import  { app }  from '../firebase'
+import  { UserClass } from './user';
 
 let template = document.createElement('template');
 template.innerHTML = require('./template.html');
@@ -97,6 +98,15 @@ inputFile.addEventListener('change', changeAvatar)
 app.auth().onAuthStateChanged(function(user){
     if(user){
         modal.className = 'modal';
+        let userInstance = new UserClass();
+        userInstance.user = {email:user.email, uid: user.uid};
+
+        //Pega a imagem do usuário 
+        app.database().ref('/users/'+userInstance.user.uid)
+        .once('value', (snapshot)=>{
+            userInstance.avatar = snapshot.val().avatar;
+        })
+
     }else{
         modal.className += ' open';
         btnCreateAccount.addEventListener('click', createAccount);
