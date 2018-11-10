@@ -11,6 +11,7 @@ export default function(idTab){
         console.log(contentSidbar)
         let htmlUsers = '';
         refDatabase.ref('/users')
+            //Cosulta todos os usuários do sistema
             .once('value', function(snapshot){
                 let data = Object.entries(snapshot.val());
                 data.forEach((item)=>{
@@ -21,7 +22,7 @@ export default function(idTab){
                     }
                     
                 })
-                contentSidbar.innerHTML = htmlUsers
+                contentSidbar.innerHTML = htmlUsers;
             })
         
         
