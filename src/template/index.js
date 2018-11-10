@@ -6,6 +6,8 @@ const header = require('./header.html')
 const sidbar = require('./sidebar.html');
 const footer = require('./footer.html');
 
+
+
 export default{
     el: "#app",
     template:` 

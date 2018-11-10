@@ -2,6 +2,7 @@ let instance = null;
 
 export class UserClass{
 
+
     constructor(){
         if(!instance){
             instance = this;
@@ -20,4 +21,6 @@ export class UserClass{
     set avatar(avatar){
         this._user.avatar = avatar;
     }
+
+    
 }

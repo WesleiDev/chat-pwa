@@ -1,4 +1,6 @@
+import loadingContent from './loading-content-sidebar';
 require('./style.scss');
+
 
 export default {
     el: '#main',
@@ -20,7 +22,11 @@ export default {
                 const currentTabActive = document.querySelector('.tab-active')
                 currentTabActive.className = 'tab';
                 e.currentTarget.className  = 'tab tab-active';
+
+                loadingContent(e.currentTarget.id);
             })
         })
+
+        // document.querySelector('.tab-active')
     }
 }

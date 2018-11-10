@@ -1,5 +1,6 @@
 import  { app }  from '../firebase'
 import  { UserClass } from './user';
+import initUser from './inituser';
 
 let template = document.createElement('template');
 template.innerHTML = require('./template.html');
@@ -105,7 +106,9 @@ app.auth().onAuthStateChanged(function(user){
         app.database().ref('/users/'+userInstance.user.uid)
         .once('value', (snapshot)=>{
             userInstance.avatar = snapshot.val().avatar;
-        })
+        
+            initUser()
+        })        
 
     }else{
         modal.className += ' open';
