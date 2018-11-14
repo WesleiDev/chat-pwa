@@ -1,5 +1,6 @@
 import { app } from '../firebase';
 import { UserClass } from '../auth/user';
+import initTalk from './init-talk';
 
 export default function(idTab){
     const partialCardUser = require('./partial-card-user.html')
@@ -8,7 +9,6 @@ export default function(idTab){
     const refDatabase = app.database();
 
     if(idTab == 'tab-users'){
-        console.log(contentSidbar)
         let htmlUsers = '';
         refDatabase.ref('/users')
             //Cosulta todos os usuários do sistema
@@ -19,10 +19,17 @@ export default function(idTab){
                         htmlUsers += partialCardUser
                                     .replace(/{{ avatar }}/g, item[1].avatar)
                                     .replace(/{{ email }}/g, item[1].email)
+                                    .replace(/{{ uid }}/g, item[1].uid)
+
+                                    
                     }
                     
                 })
                 contentSidbar.innerHTML = htmlUsers;
+                    
+               document.querySelectorAll('.user-list').forEach((e) =>{
+                    e.addEventListener('click', initTalk );
+                })
             })
         
         

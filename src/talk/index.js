@@ -1,4 +1,5 @@
 import loadingContent from './loading-content-sidebar';
+import { app } from '../firebase';
 require('./style.scss');
 
 
@@ -26,6 +27,19 @@ export default {
                 loadingContent(e.currentTarget.id);
             })
         })
+
+        //transformar isto na listagem de todas as conversas do usuário conectado
+        // app.database().ref('chat_list/mt5RXuzLLjbUur3njf69mUf06WF3')
+        // .on('value', (snapshot)=>{
+        //     let data = Object.entries(snapshot.val());
+        //     for(let i = 0; i < data.length;i++ ){
+        //         app.database().ref('/users/'+data[i][1].user_id)
+        //         .on('value', function(data){
+        //             console.log('USUARIO DA LISTA: ', data.val())
+        //         })
+        //     }
+            
+        // })
 
         // document.querySelector('.tab-active')
     }
