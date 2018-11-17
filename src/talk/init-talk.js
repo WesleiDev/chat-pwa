@@ -1,5 +1,6 @@
 import { UserClass } from '../auth/user';
 import { app } from '../firebase';
+import loadingUsersChat from "./loading-content-users-chat";
 
 export default function(e){
     e.preventDefault();
@@ -25,11 +26,14 @@ export default function(e){
 
      refDatabse.set({
          user_id: uid
+     }).then((data)=>{        
+        let tab_chat = document.getElementById("tab-chat");
+        tab_chat.dataset.currentChat = idChat[0]+ '_'+idChat[1];
+        tab_chat.click();
+        //Carrega a lista de usários
+        console.log('Disparando evento')
      })
 
-    console.log('UID USUÁRIO CLICADO: ', uid)
-    console.log('USUARIO ATUAL: ', userInstance.user.uid)
-    console.log(idChat)
     
 
 

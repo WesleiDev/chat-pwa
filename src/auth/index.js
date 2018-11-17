@@ -108,6 +108,7 @@ app.auth().onAuthStateChanged(function(user){
             userInstance.avatar = snapshot.val().avatar;
         
             initUser()
+            
         })        
 
     }else{

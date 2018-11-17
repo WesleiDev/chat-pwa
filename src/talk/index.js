@@ -1,5 +1,4 @@
 import loadingContent from './loading-content-sidebar';
-import { app } from '../firebase';
 require('./style.scss');
 
 
@@ -23,24 +22,14 @@ export default {
                 const currentTabActive = document.querySelector('.tab-active')
                 currentTabActive.className = 'tab';
                 e.currentTarget.className  = 'tab tab-active';
-
                 loadingContent(e.currentTarget.id);
+                
             })
         })
 
-        //transformar isto na listagem de todas as conversas do usuário conectado
-        // app.database().ref('chat_list/mt5RXuzLLjbUur3njf69mUf06WF3')
-        // .on('value', (snapshot)=>{
-        //     let data = Object.entries(snapshot.val());
-        //     for(let i = 0; i < data.length;i++ ){
-        //         app.database().ref('/users/'+data[i][1].user_id)
-        //         .on('value', function(data){
-        //             console.log('USUARIO DA LISTA: ', data.val())
-        //         })
-        //     }
-            
-        // })
+        //Inicializar a lista de conversas
+        
 
-        // document.querySelector('.tab-active')
+      
     }
 }
