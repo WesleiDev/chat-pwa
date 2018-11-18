@@ -34,7 +34,8 @@ export default function(){
             //Se for o último elemento
             if((i+1) == data.length){
                 document.querySelectorAll('.user-chat').forEach((e, index) =>{
-                    e.addEventListener("click", function(e){
+                    e.addEventListener("click", function(e){                        
+                        //Adiciona a conversa ativa
                         document.getElementById(data[index][0]).className += " active";
                         console.log("Clicou: ", e)
                         e.className += " active";
