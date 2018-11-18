@@ -15,7 +15,8 @@ export default function(){
     
     //transformar isto na listagem de todas as conversas do usuário conectado
     refDatabase.ref('chat_list/'+userInstance.user.uid)
-    .once('value', (snapshot)=>{
+    .on('value', (snapshot)=>{
+        contentSidbar.innerHTML = "";
         let data = (snapshot.val()!== null)?Object.entries(snapshot.val()): [];
         for(let i = 0; i < data.length;i++ ){
             app.database().ref('/users/'+data[i][1].user_id)
@@ -31,7 +32,8 @@ export default function(){
                     loadingMesage();
                 }
 
-            contentSidbar.innerHTML += htmlUsers; 
+            contentSidbar.insertAdjacentHTML('beforeend', htmlUsers)
+            
 
             //Se for o último elemento
             if((i+1) == data.length){

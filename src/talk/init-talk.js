@@ -1,6 +1,7 @@
 import { UserClass } from '../auth/user';
 import { app } from '../firebase';
 
+
 export default function(e){
     e.preventDefault();
 
@@ -30,6 +31,7 @@ export default function(e){
         let tab_chat = document.getElementById("tab-chat");
         tab_chat.dataset.currentChat = idChat[0]+ '_'+idChat[1];
         tab_chat.click();
+
 
         //Esconde o sidebar
         document.querySelector('.menu-icon').click();
