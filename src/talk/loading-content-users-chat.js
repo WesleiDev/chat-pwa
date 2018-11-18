@@ -29,10 +29,27 @@ export default function(){
                     htmlUsers = htmlUsers.replace('class="card-user user-chat"','class="card-user user-chat active"')
                 }
 
-            contentSidbar.innerHTML += htmlUsers;                
+            contentSidbar.innerHTML += htmlUsers; 
+
+            //Se for o último elemento
+            if((i+1) == data.length){
+                document.querySelectorAll('.user-chat').forEach((e, index) =>{
+                    e.addEventListener("click", function(e){
+                        document.getElementById(data[index][0]).className += " active";
+                        console.log("Clicou: ", e)
+                        e.className += " active";
+                    })
+                })    
+            }
+            
+            
+    
 
             })
         }
+    
+
+        
 
         
         

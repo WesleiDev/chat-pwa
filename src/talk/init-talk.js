@@ -30,8 +30,9 @@ export default function(e){
         let tab_chat = document.getElementById("tab-chat");
         tab_chat.dataset.currentChat = idChat[0]+ '_'+idChat[1];
         tab_chat.click();
+   
         //Carrega a lista de usários
-        console.log('Disparando evento')
+
      })
 
     
