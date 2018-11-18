@@ -1,6 +1,5 @@
 import { UserClass } from '../auth/user';
 import { app } from '../firebase';
-import loadingUsersChat from "./loading-content-users-chat";
 
 export default function(e){
     e.preventDefault();
@@ -26,12 +25,15 @@ export default function(e){
 
      refDatabse.set({
          user_id: uid
-     }).then((data)=>{        
+     }).then((data)=>{     
+         //carrega os usuários   
         let tab_chat = document.getElementById("tab-chat");
         tab_chat.dataset.currentChat = idChat[0]+ '_'+idChat[1];
         tab_chat.click();
-   
-        //Carrega a lista de usários
+
+        //Esconde o sidebar
+        document.querySelector('.menu-icon').click();
+        
 
      })
 

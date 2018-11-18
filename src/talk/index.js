@@ -1,4 +1,5 @@
 import loadingContent from './loading-content-sidebar';
+import sendMessage from "./send-message";
 require('./style.scss');
 
 
@@ -28,6 +29,19 @@ export default {
         })
 
         //Inicializar a lista de conversas
+        const btnSend = document.getElementById('btn-send');
+        btnSend.addEventListener('click',sendMessage)
+        
+        const message    = document.getElementById("message");
+        message.addEventListener("keypress", function(e){
+            if(e.key == "Enter"){
+                //Quando o usuário precionar o enter para enviar a menssagem
+                sendMessage(e)
+            }
+            
+        })
+
+         
         
 
       

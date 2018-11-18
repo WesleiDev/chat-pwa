@@ -17,7 +17,8 @@ export default function(){
             .once('value', function(snapshot){
                 let data = Object.entries(snapshot.val());
                 data.forEach((item)=>{
-                    if(item[1].uid !== userInstance){
+                    //Não mostra o usuário conectado la lista de usuários
+                    if(item[1].uid !== userInstance.user.uid){
                         htmlUsers += partialCardUser
                                     .replace(/{{ avatar }}/g, item[1].avatar)
                                     .replace(/{{ email }}/g, item[1].email)

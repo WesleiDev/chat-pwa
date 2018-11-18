@@ -1,5 +1,6 @@
 import { app } from '../firebase';
 import { UserClass } from '../auth/user';
+import loadingMesage from "./loading-message";
 
 
 
@@ -25,20 +26,39 @@ export default function(){
                             .replace(/{{ id }}/g, data[i][0])
                 //Se for a conversa atual
                 if(current_chat === data[i][0] ){
-                    console.log("Passou id da conversa: ", current_chat);
                     htmlUsers = htmlUsers.replace('class="card-user user-chat"','class="card-user user-chat active"')
+                    //Carrega as menssagens do usuario selecionado
+                    loadingMesage();
                 }
 
             contentSidbar.innerHTML += htmlUsers; 
 
             //Se for o último elemento
             if((i+1) == data.length){
+                
+
                 document.querySelectorAll('.user-chat').forEach((e, index) =>{
-                    e.addEventListener("click", function(e){                        
+                    e.addEventListener("click", function(e){  
+                        let oldCardSelected = document.querySelector('.card-user.user-chat.active');
+                        //Remove o card antigo que estava selecionado
+                        if(oldCardSelected!== null){
+                            oldCardSelected.className = "card-user user-chat";
+                        }
+                      
                         //Adiciona a conversa ativa
-                        document.getElementById(data[index][0]).className += " active";
-                        console.log("Clicou: ", e)
-                        e.className += " active";
+                        const cardSelected = document.getElementById(data[index][0]);
+                        cardSelected.className += " active";
+                        cardSelected.dataset.uid = user_chat.val().uid;
+                       
+
+                        //Informa qual é a conversa atual
+                        let tab_chat = document.getElementById("tab-chat");
+                        tab_chat.dataset.currentChat = data[index][0];
+
+                        //Esconde o sidebar
+                        document.querySelector('.menu-icon').click();
+                        //Carrega as menssagens do usuario selecionado
+                        loadingMesage();
                     })
                 })    
             }

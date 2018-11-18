@@ -1,5 +1,29 @@
 #talk{
     // background: blue;
     overflow: auto;
-    height :100%;
+    // height :100%;
+
+    .message{
+        margin : 10px;
+        width: 50%;
+        padding: 5px;
+        font-size: 0.5em;
+        border-radius: 5px;
+        border: solid 1px rgba(184, 182, 182, 0.75);
+        box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+
+        &.dest{
+            background-color: #b3b3b3;
+            border-top-left-radius: 15px;
+            float: left;
+        }
+
+        &.emit{
+            float: right;
+            background-color: #ffffff;
+            border-top-right-radius: 15px;
+        }
+    }
+
+
 }
