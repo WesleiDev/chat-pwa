@@ -5,6 +5,9 @@ const partialMessage = require("./partial-message.html");
 
 
 export default function(e){
+    //Esconde o sidebar
+    document.querySelector('.menu-icon').click();
+    
     let  contentMessages = document.getElementById("talk");
     contentMessages.innerHTML = "";
 

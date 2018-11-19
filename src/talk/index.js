@@ -26,8 +26,9 @@ export default {
                 loadingContent(e.currentTarget.id);
                 
             })
-        })
-
+        })       
+    
+        
         //Inicializar a lista de conversas
         const btnSend = document.getElementById('btn-send');
         btnSend.addEventListener('click',sendMessage)

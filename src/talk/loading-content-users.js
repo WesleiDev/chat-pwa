@@ -7,7 +7,7 @@ import initTalk from './init-talk';
 export default function(){
     const partialCardUser = require('./partial-card-user.html')
     const userInstance = new UserClass();
-    let contentSidbar = document.querySelector('.content-sidebar');
+    let contentSidbar = document.querySelector('.content-users');
     const refDatabase = app.database();
     let htmlUsers = '';
     contentSidbar.innerHTML = "";

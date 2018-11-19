@@ -7,20 +7,24 @@ import loadingMesage from "./loading-message";
 export default function(){
     const partialCardUserChat = require('./partial-card-user-chat.html')
     const userInstance = new UserClass();
-    let contentSidbar = document.querySelector('.content-sidebar');
+    let contentSidbar = document.querySelector('.content-users-chat');
     const refDatabase = app.database();
     let htmlUsers = '';
     contentSidbar.innerHTML = "";
-    let current_chat  = document.getElementById("tab-chat").dataset.currentChat;
+    let current_chat = "";
     
     //transformar isto na listagem de todas as conversas do usuário conectado
     refDatabase.ref('chat_list/'+userInstance.user.uid)
     .on('value', (snapshot)=>{
         contentSidbar.innerHTML = "";
         let data = (snapshot.val()!== null)?Object.entries(snapshot.val()): [];
+        
         for(let i = 0; i < data.length;i++ ){
             app.database().ref('/users/'+data[i][1].user_id)
             .once('value', function(user_chat){
+                current_chat  = document.getElementById("tab-chat").dataset.currentChat;
+                console.log('CHAT_ATUAL: ', current_chat)
+                console.log('ID_CHAT',data[i][0] )
                 htmlUsers = partialCardUserChat
                             .replace(/{{ avatar }}/g, user_chat.val().avatar)
                             .replace(/{{ email }}/g, user_chat.val().email)
@@ -57,8 +61,6 @@ export default function(){
                         let tab_chat = document.getElementById("tab-chat");
                         tab_chat.dataset.currentChat = data[index][0];
 
-                        //Esconde o sidebar
-                        document.querySelector('.menu-icon').click();
                         //Carrega as menssagens do usuario selecionado
                         loadingMesage();
                     })

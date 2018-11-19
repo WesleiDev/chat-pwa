@@ -32,9 +32,12 @@ export default function(e){
         tab_chat.dataset.currentChat = idChat[0]+ '_'+idChat[1];
         tab_chat.click();
 
-
         //Esconde o sidebar
-        document.querySelector('.menu-icon').click();
+        // document.querySelector('.menu-icon').click();
+        let chat =  document.getElementById(idChat[0]+ '_'+idChat[1]); 
+        if(chat){
+            chat.click();
+        }      
         
 
      })
