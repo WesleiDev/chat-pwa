@@ -13,9 +13,7 @@ export default function(e){
         // console.log('Enviar menssagem: ', msg.value)
         // console.log("ID CHat: ", idChat);
         // console.log("Id destinatario: ", idDest);
-        // console.log("ID emitente: ", userInstance.user.uid);
-
-      
+        // console.log("ID emitente: ", userInstance.user.uid);       
         
     
         const refDatabase = app.database().ref("/posts/messages/"+idChat);

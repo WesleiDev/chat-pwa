@@ -9,7 +9,8 @@ module.exports = {
     },
     devServer:{
         contentBase: path.resolve(__dirname, 'dist'),
-        port: 9000
+        port: 9000,
+        disableHostCheck: true
     },
     module:{
         rules:[

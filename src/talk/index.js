@@ -8,12 +8,12 @@ export default {
     template: require('./template.html'),
     afterBind :()=>{
         console.log('Carregou a conversa')
-        const talk       = document.getElementById('talk');
+        const main       = document.getElementById('main');
         const sideBar    = document.getElementById('sidebar');
         const tabs       = document.querySelectorAll('.tab');
 
 
-        talk.addEventListener('click', function(e){
+        main.addEventListener('click', function(e){
             e.preventDefault();
             sideBar.className = 'hide-sidebar';
         })
