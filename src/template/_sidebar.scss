@@ -92,6 +92,25 @@
 
 
     }
+    span{
+        color: #E0F2F1;
+        background-color: rgba(206, 26, 26, 0.651);
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        margin-top: 0;
+        float: right;
+        font-size: 0.5em;
+        text-align: center;
+        padding: 1px;
+        position: relative;
+        margin: -10px -10px;
+        opacity: 0;        
+        
+        &.active{
+            opacity: 1;
+        }
+    }
     &.active{
         background-color:#efe4e4;
     }
