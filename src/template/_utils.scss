@@ -17,3 +17,13 @@
 .avatar{
     border-radius: 50px;
 }
+
+.btn-group{
+    display: flex;
+    flex-direction: row;
+
+    a{
+        flex: 1;
+        text-align: center;
+    }
+}

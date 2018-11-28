@@ -2,15 +2,23 @@ import loadingContent from './loading-content-sidebar';
 import sendMessage from "./send-message";
 require('./style.scss');
 
+let template = document.createElement('template');
+template.innerHTML = require('../upload/md-upload.html');
+template = template.content.childNodes;
+
+document.querySelector('body').appendChild(template[0]);
 
 export default {
     el: '#main',
     template: require('./template.html'),
     afterBind :()=>{
-        console.log('Carregou a conversa')
-        const main       = document.getElementById('main');
-        const sideBar    = document.getElementById('sidebar');
-        const tabs       = document.querySelectorAll('.tab');
+        const main              = document.getElementById('main');
+        const sideBar           = document.getElementById('sidebar');
+        const tabs              = document.querySelectorAll('.tab');
+        const btnAttachment     = document.getElementById('btn-attachment');
+        const modalUpload       = document.getElementById('md-upload');
+        const btnCancelUpload   = document.getElementById('btn-cancelar-upload');
+        let btnOptFile          = document.querySelectorAll('.btn-option-file');
 
 
         main.addEventListener('click', function(e){
@@ -40,6 +48,37 @@ export default {
                 sendMessage(e)
             }
             
+        })
+
+        //Abrir modal de upload
+        btnAttachment.addEventListener('click', function(e){
+            e.preventDefault();
+            modalUpload.className += ' open';
+        })
+
+        //Fechar modal de upload
+        btnCancelUpload.addEventListener('click', function(e){
+            e.preventDefault();
+            modalUpload.className = 'modal';
+        })
+
+        //Quando clicar em alguma das opções para upload
+        btnOptFile.forEach((e)=>{
+            e.addEventListener('click', function(e){
+                e.preventDefault();
+                switch (e.target.parentNode.id){
+                  case 'btn-camera':
+                    console.log('Tirar foto')
+                  break;  
+                  case 'btn-file':
+                    console.log('Enviar arquivo')
+                  break;
+                  case 'btn-mic':
+                    console.log('Gravar audio')
+                  break;
+                }
+                
+            })
         })
 
          
