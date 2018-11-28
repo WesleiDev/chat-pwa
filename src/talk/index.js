@@ -1,5 +1,6 @@
 import loadingContent from './loading-content-sidebar';
 import sendMessage from "./send-message";
+import uploadFile from  "../upload/file";
 require('./style.scss');
 
 let template = document.createElement('template');
@@ -71,7 +72,7 @@ export default {
                     console.log('Tirar foto')
                   break;  
                   case 'btn-file':
-                    console.log('Enviar arquivo')
+                    uploadFile()
                   break;
                   case 'btn-mic':
                     console.log('Gravar audio')
