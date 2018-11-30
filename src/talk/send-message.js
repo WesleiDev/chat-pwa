@@ -1,13 +1,14 @@
 import { UserClass } from "../auth/user";
 import { app } from "../firebase";
 
-export default function(e){
+export default function(type){
     try{
-        e.preventDefault();
+
         const userInstance = new UserClass();
+        // type = (typeof type === "undefined") ? { type: "txt" } : type;
     
         let msg          = document.getElementById('message');
-        let idChat   = document.getElementById("tab-chat").dataset.currentChat;
+        let idChat       = document.getElementById("tab-chat").dataset.currentChat;
         let idDest       =  document.getElementById(idChat).dataset.uid;
     
         // console.log('Enviar menssagem: ', msg.value)
@@ -15,12 +16,13 @@ export default function(e){
         // console.log("Id destinatario: ", idDest);
         // console.log("ID emitente: ", userInstance.user.uid);       
         
-    
+        console.log('Type da messagem: ', type)
         const refDatabase = app.database().ref("/posts/messages/"+idChat);
         refDatabase.push({
             idDest: idDest,
             idEmitter: userInstance.user.uid,
-            message: msg.value
+            message: msg.value,
+            type: type
         }).then((result) => {
             //Atualiza o numero de mensagens nova para o usuário destinatário
             let refChange = app.database();
