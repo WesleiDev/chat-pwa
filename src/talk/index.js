@@ -1,6 +1,7 @@
 import loadingContent from './loading-content-sidebar';
 import sendMessage from "./send-message";
 import uploadFile from  "../upload/file";
+import recordAudio from '../upload/audio';
 require('./style.scss');
 
 let template = document.createElement('template');
@@ -77,6 +78,7 @@ export default {
                     uploadFile()
                   break;
                   case 'btn-mic':
+                    recordAudio()
                     console.log('Gravar audio')
                   break;
                 }

@@ -2,6 +2,7 @@ import { app } from '../firebase';
 import sendMessage from '../talk/send-message';
 
 export default function(file, name, type){
+    const btnCancelUpload   = document.getElementById('btn-cancelar-upload');
     console.log('Enviando para o firebase')
     let fileMessage = {};
     const refDatabase = app.storage().ref('/files/'+name);
@@ -15,6 +16,7 @@ export default function(file, name, type){
                 url: downloadURL
             }
             sendMessage(fileMessage)
+            btnCancelUpload.click();
         })
         
     })

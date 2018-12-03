@@ -1,6 +1,6 @@
 #talk{
     // background: blue;
-    overflow: auto;
+    overflow: none;
     // height :100%;
 
     .message{
@@ -22,6 +22,13 @@
             float: right;
             background-color: #ffffff;
             border-top-right-radius: 15px;
+        }
+
+        .content-file{
+            img{
+                width: 100px;
+                height: 100px;
+            }
         }
     }
 

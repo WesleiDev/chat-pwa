@@ -34,6 +34,19 @@ export default function(e){
             htmlMessage = partialMessage.replace(/{{ class }}/g,auxClass )
                                         .replace(/{{ id }}/g, snap.key)
                                         .replace(/{{ msg }}/g, snap.val().message)
+
+            if(snap.val().type.type == 'img'){
+                //Remove o hidden e adicionar a imagem
+                htmlMessage = htmlMessage.replace(/content-file hidden/g, "content-file" )
+                .replace(/{{ file }}/g, "<img src='"+snap.val().type.url+"'>");
+            }else
+            if(snap.val().type.type == 'audio'){
+                //Remove o hidden e adicionar a imagem
+                htmlMessage = htmlMessage.replace(/content-file hidden/g, "content-file" )
+                .replace(/{{ file }}/g, "<video controls='' name='media'><source src='https://firebasestorage.googleapis.com/v0/b/chat-pwa-weslei.appspot.com/o/files%2Fjdpfdkgiel.ogg?alt=media&token=185bf714-7f25-41af-9b08-b6d257336190' type='audio/ogg'></video>");
+            }
+
+            
             
             contentMessages.insertAdjacentHTML('beforeend', htmlMessage)
     
