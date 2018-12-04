@@ -25,7 +25,8 @@ export default function(){
                             .replace(/{{ avatar }}/g, user_chat.val().avatar)
                             .replace(/{{ email }}/g, user_chat.val().email)
                             .replace(/{{ new_messages }}/g, snapshot.val().new_messages)
-                            .replace(/{{ id }}/g, snapshot.key);
+                            .replace(/{{ id }}/g, snapshot.key)
+                            .replace(/{{ uid }}/g, snapshot.val().user_id)
                 
                 //verifica se possui novas mensagem            
                 if(parseInt(snapshot.val().new_messages) > 0 ){
@@ -49,36 +50,36 @@ export default function(){
             //Se for o último elemento
             // if((i+1) == data.length){               
 
-                document.getElementById(snapshot.key).addEventListener("click", function(e){  
-                        let oldCardSelected = document.querySelector('.card-user.user-chat.active');
-                        //Remove o card antigo que estava selecionado
-                        if(oldCardSelected!== null){
-                            oldCardSelected.className = "card-user user-chat";
-                        }
-                      
-                        //Adiciona a conversa ativa
-                        const cardSelected = document.getElementById(snapshot.key);
-                        cardSelected.className += " active";
-                        cardSelected.dataset.uid = user_chat.val().uid;
-                       
+            document.getElementById(snapshot.key).addEventListener("click", function(e){  
+                    let oldCardSelected = document.querySelector('.card-user.user-chat.active');
+                    //Remove o card antigo que estava selecionado
+                    if(oldCardSelected!== null){
+                        oldCardSelected.className = "card-user user-chat";
+                    }
+                    
+                    //Adiciona a conversa ativa
+                    const cardSelected = document.getElementById(snapshot.key);
+                    cardSelected.className += " active";
+                    // cardSelected.dataset.uid = user_chat.val().uid;
+                    
 
-                        //Informa qual é a conversa atual
-                        let tab_chat = document.getElementById("tab-chat");
-                        tab_chat.dataset.currentChat = snapshot.key;
+                    //Informa qual é a conversa atual
+                    let tab_chat = document.getElementById("tab-chat");
+                    tab_chat.dataset.currentChat = snapshot.key;
 
-                        const refChange2 = refDatabase;
+                    const refChange2 = refDatabase;
 
-                        //Limpa as notificações
-                        refChange2.ref('chat_list/'+userInstance.user.uid+'/'+snapshot.key).update({
-                            new_messages: 0
-                        })
-                        let notification = document.getElementById(snapshot.key).childNodes[1];
-                        notification.innerHTML = 0;
-                        notification.className = "new-message";
+                    //Limpa as notificações
+                    refChange2.ref('chat_list/'+userInstance.user.uid+'/'+snapshot.key).update({
+                        new_messages: 0
+                    })
+                    let notification = document.getElementById(snapshot.key).childNodes[1];
+                    notification.innerHTML = 0;
+                    notification.className = "new-message";
 
-                        //Carrega as menssagens do usuario selecionado
-                        loadingMesage();
-                    })          
+                    //Carrega as menssagens do usuario selecionado
+                    loadingMesage();
+                })          
 
             })
     

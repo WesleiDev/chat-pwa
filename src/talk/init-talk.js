@@ -73,14 +73,7 @@ export default function(e){
                 })             
          }
      })
-    //  refDatabase2.set({
-    //      user_id: userInstance.user.uid,
-    //      new_messages: 0
-    //  }).then((data)=>{     
-    //      console.log('Salvou a lista do outro usuário')
-    //  })
-
-    
+ 
 
 
 
