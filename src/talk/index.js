@@ -2,6 +2,7 @@ import loadingContent from './loading-content-sidebar';
 import sendMessage from "./send-message";
 import uploadFile from  "../upload/file";
 import recordAudio from '../upload/audio';
+import photo       from '../upload/photo';
 require('./style.scss');
 
 let template = document.createElement('template');
@@ -78,6 +79,7 @@ export default {
                 e.preventDefault();
                 switch (e.target.parentNode.id){
                   case 'btn-camera':
+                    photo();
                     console.log('Tirar foto')
                   break;  
                   case 'btn-file':
@@ -85,7 +87,6 @@ export default {
                   break;
                   case 'btn-mic':
                     recordAudio()
-                    console.log('Gravar audio')
                   break;
                 }
                 
