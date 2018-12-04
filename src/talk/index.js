@@ -23,10 +23,10 @@ export default {
         let btnOptFile          = document.querySelectorAll('.btn-option-file');
 
 
-        main.addEventListener('click', function(e){
-            e.preventDefault();
-            sideBar.className = 'hide-sidebar';
-        })
+        // main.addEventListener('click', function(e){
+        //     e.preventDefault();
+        //     sideBar.className = 'hide-sidebar';
+        // })
 
         tabs.forEach((e, index)=>{
             tabs[index].addEventListener('click', function(e){
@@ -46,6 +46,7 @@ export default {
         })
         
         const message    = document.getElementById("message");
+    
         message.addEventListener("keypress", function(e){
             if(e.key == "Enter"){
                 //Quando o usuário precionar o enter para enviar a menssagem
@@ -57,6 +58,11 @@ export default {
         //Abrir modal de upload
         btnAttachment.addEventListener('click', function(e){
             e.preventDefault();
+            const currentChat = document.querySelector('.tab-active').dataset.currentChat;
+            if(typeof currentChat === 'undefined'){
+                alert('Selecione uma conversa para enviar arquivos');
+                return;
+            }
             modalUpload.className += ' open';
         })
 

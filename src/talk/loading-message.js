@@ -43,7 +43,7 @@ export default function(e){
             if(snap.val().type.type == 'audio'){
                 //Remove o hidden e adicionar a imagem
                 htmlMessage = htmlMessage.replace(/content-file hidden/g, "content-file" )
-                .replace(/{{ file }}/g, "<video controls='' name='media'><source src='https://firebasestorage.googleapis.com/v0/b/chat-pwa-weslei.appspot.com/o/files%2Fjdpfdkgiel.ogg?alt=media&token=185bf714-7f25-41af-9b08-b6d257336190' type='audio/ogg'></video>");
+                .replace(/{{ file }}/g, "<audio controls='true' name='media'><source src='"+snap.val().type.url+"' type='audio/ogg'></audio>");
             }
 
             
