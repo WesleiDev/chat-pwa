@@ -32,8 +32,15 @@
         }
     }
 
+    @media(max-width: 425px){
+        .message{
+            width: 96%;
+        }
+    }
 
 }
+
+
 
 .preview-upload{
     width: 200px;
