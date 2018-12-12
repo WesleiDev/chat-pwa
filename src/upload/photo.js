@@ -8,7 +8,6 @@ const startVideo = function(id){
         video:{ deviceId: id },
         audio: false
     }
-
     let video = document.createElement('video');
     document.querySelector('.preview-upload').append(video);
     document.getElementById('options-photo').innerHTML = "";
@@ -25,17 +24,18 @@ const startVideo = function(id){
 
     let success = function(strem){
         streamVideo = strem;
-        video.src = window.URL.createObjectURL(strem);
+        video.srcObject = strem;
         video.play();
     }
     navigator.getUserMedia(config, success, (err) => alert(err))
 }
 
 export default function(){
-    // let currentVideo = document.querySelector('.preview-upload video');
-    // if(currentVideo){
-    //     currentVideo.remove();
-    // }
+    //Remove o vídeo atual
+    let currentVideo = document.querySelector('.preview-upload video');
+    if(currentVideo){
+        currentVideo.remove();
+    }
     
     //Carrega todos os dispositivos conectados
     navigator.mediaDevices.enumerateDevices().then((devices) => {
@@ -46,11 +46,9 @@ export default function(){
         if(device.kind == 'videoinput'){
             options.push(device);
         } 
-        //  options.push(device);    
+          //options.push(device);    
     })
-
-    // let template =
-
+    
     //Cria as opções de camera
     let optionsPhoto       = document.getElementById('options-photo');
     let html = '';

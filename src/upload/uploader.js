@@ -10,7 +10,6 @@ export default function(file, name, type){
     refDatabase.put(file)
     .then((snapshot) =>{
         snapshot.ref.getDownloadURL().then(function(downloadURL){
-            console.log('Realizou o upload: ', downloadURL)
             fileMessage = {
                 type : type,
                 url: downloadURL
