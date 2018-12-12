@@ -17,6 +17,7 @@ export default function(file, name, type){
             sendMessage(fileMessage)
             btnCancelUpload.click();
         })
+        console.log('Enviando arquivo')
         
     })
 

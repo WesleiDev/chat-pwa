@@ -1,15 +1,26 @@
 import upload from "./uploader";
 
 export default function(){
-    let file = document.getElementById('file-upload');
-    let displayUpload = document.getElementById('display-upload');
+    const file = document.getElementById('file-upload');
+
+    const previewUpload = document.querySelector('.preview-upload');
+
+    //Remove a imagem do display atual
+    if(document.getElementById('display-upload')){
+        document.getElementById('display-upload').remove();
+    }
+    let displayUpload = document.createElement('img');
+    displayUpload.id = "display-upload";
+
+    previewUpload.appendChild(displayUpload);
+
     const btnSendUpload = document.getElementById('btn-send-upload');
 
     //realiza upload dos arquivos do tipo
     //img, video, audio
     file.addEventListener('change', function(e){
         e.preventDefault();
-        var reader = new FileReader();
+        const reader = new FileReader();
         reader.onload = function(e){
         displayUpload.src = e.currentTarget.result;
         }
