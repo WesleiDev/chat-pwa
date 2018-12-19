@@ -26,6 +26,7 @@ export default function(e){
     
 
     refChild.on('child_added', (snap) =>{
+        
         //Somente o usuário estiver na mesma conversa
         if(document.getElementById("tab-chat").dataset.currentChat === idChat){
             let htmlMessage = "";

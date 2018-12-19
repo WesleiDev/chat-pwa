@@ -18,7 +18,8 @@ export default function(){
 
     //realiza upload dos arquivos do tipo
     //img, video, audio
-    file.addEventListener('change', function(e){
+
+    const callback = function(e){
         e.preventDefault();
         const reader = new FileReader();
         reader.onload = function(e){
@@ -27,17 +28,23 @@ export default function(){
 
         reader.readAsDataURL(e.target.files[0])
         
-            console.log('Selecionou arquivo para upload');
-    })
+        console.log('Removendo evento');
 
-    btnSendUpload.addEventListener('click', function(e){
+        file.removeEventListener('change', callback);
+    }
+
+    file.addEventListener('change', callback )
+
+    const callbackEnviar = function(e){
 
         let nameImage = Math.random().toString(36).substring(2);
         nameImage += '.png';
         upload(file.files[0], nameImage, 'img')
-      
 
-    })
+        btnSendUpload.removeEventListener('click', callbackEnviar);
+
+    }
+    btnSendUpload.addEventListener('click',callbackEnviar )
 
 
     file.click();
